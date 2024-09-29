@@ -1,23 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Resource    ../AccountPagesGlobalVariables.robot
 
 *** Variables ***
 ${editAddressDetailsLink}=  xpath://a[@href='/edit-address/?addressId=myDetailsShipping']
 ${editAddressDetailsBreadcrumb}=   xpath://ul[@class='b-breadcrumbs-list']//li//a[contains(.,"Edit Address Details")]
-${secondAddressCardLine}=   xpath=(//div[contains(@class, 'm-address')]//p)[2]
-${thirdAddressCardLine}=    xpath=(//div[contains(@class, 'm-address')]//p)[3]
-${oldAddressCard}=  css:.m-address
-${quickAddressFinder}=  xpath://input[@id='dwfrm_address_quickFinder']
-${suggestion}=  xpath://div[@class='pac-item']
 ${newQuickFinderAddress}=   San Diego Zoo, Zoo Drive
-${addressLine1}=    xpath://input[@id='dwfrm_address_address1']
-${city}=    xpath://input[@id='dwfrm_address_city']
-${state}=   xpath://select[@id='dwfrm_address_states_stateCode']
-${zipcode}=     xpath://input[@id='dwfrm_address_postalCode']
-${saveAddressButton}=   xpath://button[@name='dwfrm_address_apply']
 ${redirectExpectedUrl}=     https://development.tulipcremation.com/account/
-
 
 *** Keywords ***
 Change Address Details

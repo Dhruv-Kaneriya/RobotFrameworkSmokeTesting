@@ -11,7 +11,7 @@ Resource    PO/Account/ExistingAccount/ExistingAccountPasswordChange.robot
 Resource    PO/Account/ExistingAccount/ExistingAccountAddressChange.robot
 Resource    PO/Account/NewAccount/EditNewAccountProfileDetails.robot
 Resource    PO/Account/NewAccount/NewAccountPasswordChange.robot
-
+Resource    PO/Account/NewAccount/NewAccountAddAddress.robot
 Resource    Common.robot
 
 *** Keywords ***
@@ -53,3 +53,7 @@ Verify Edit New Account Details
 Verify New Account Password Change
     AccountDetails.Open Account Details Page
     NewAccountPasswordChange.Change Account Password from Profile
+
+Verify New Account Add Address
+    AccountDetails.Open Account Details Page
+    NewAccountAddAddress.Add Address Details

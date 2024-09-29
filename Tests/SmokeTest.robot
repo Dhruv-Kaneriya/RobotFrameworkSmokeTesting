@@ -56,3 +56,8 @@ New Account Password Change Functionality
     Tulip.Open Homepage
     Tulip.Verify SignUp Functionality
     Tulip.Verify New Account Password Change
+
+New Account Add Address Functionality
+    Tulip.Open Homepage
+    Tulip.Verify SignUp Functionality
+    Tulip.Verify New Account Add Address
