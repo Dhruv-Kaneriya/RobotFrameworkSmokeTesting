@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../GlobalVariables.robot
+Resource    ../../../GlobalVariables.robot
 
 *** Variables ***
 ${changePasswordLink}=   xpath://a[@href='/changepassword/']

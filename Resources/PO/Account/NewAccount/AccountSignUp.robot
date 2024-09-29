@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    DateTime
-Resource    ../CustomLibraries/DynamicAccount.robot
+Resource    ../../../CustomLibraries/DynamicAccount.robot
+Resource    ../../../GlobalVariables.robot
 
 *** Variables ***
 ${firstNameInput}=      xpath://input[@id='dwfrm_profile_customer_firstname']
@@ -20,7 +21,6 @@ ${expectedUrl}=     https://development.tulipcremation.com/dashboard/
 ${firstNameInputText}=      Dhruv
 ${phoneNumberInputText}=    9863959394
 ${passwordInputText}=       Asd123!@#
-${emailInputBase}=      d.kaneriya    # Base part of the email
 
 *** Keywords ***
 Verify Account SignUp

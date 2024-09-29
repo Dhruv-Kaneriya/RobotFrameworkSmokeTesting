@@ -1,7 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
-Resource    ../CustomLibraries/DynamicAddress.robot
 
 *** Variables ***
 ${editAddressDetailsLink}=  xpath://a[@href='/edit-address/?addressId=myDetailsShipping']
@@ -37,6 +36,7 @@ Change Address Details
     END
     scroll element into view    ${suggestion}
     click element    ${suggestion}
+    sleep   3s
     scroll element into view    ${addressline1}
     ${address_line_1_value}=    get value    ${addressline1}
     ${city_value}=    get value     ${city}
@@ -66,6 +66,7 @@ Change Address Details
     END
     scroll element into view    ${suggestion}
     click element    ${suggestion}
+    sleep   3s
 
     scroll element into view    ${addressline1}
     ${address_line_1_value}=    get value    ${addressline1}

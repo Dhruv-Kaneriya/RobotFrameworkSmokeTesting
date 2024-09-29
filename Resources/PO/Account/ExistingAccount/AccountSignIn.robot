@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../GlobalVariables.robot
+Resource    ../../../GlobalVariables.robot
 
 *** Variables ***
 ${emailInput}=  xpath://input[@id='dwfrm_login_email']

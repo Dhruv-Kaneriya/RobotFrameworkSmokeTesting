@@ -1,6 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../CustomLibraries/DynamicAccount.robot
+Resource    ../../CustomLibraries/DynamicAccount.robot
+Resource    ../../GlobalVariables.robot
+
 
 *** Variables ***
 ${newsletterInput}=   xpath://input[starts-with(@id, 'dwfrm_emailsubscribe_email')]
@@ -11,7 +13,7 @@ ${newsletterSuccessMessage}=    css:.b-newsletters-message_success
 *** Keywords ***
 Verify Email Subscription
     ${lastNameInputText}=    Generate Dynamic Last Name
-    ${emailSubscription}=   Generate Dynamic Email      d.kaneriya      ${lastNameInputText}
+    ${emailSubscription}=   Generate Dynamic Email      ${emailInputBase}     ${lastNameInputText}
     input text      ${newsletterInput}     ${emailSubscription}
     scroll element into view    ${newsletteragreementcheckbox}
     select checkbox    ${newsletterAgreementCheckbox}

@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 Library    Collections
 Library    String
-Resource    ../GlobalVariables.robot
+Resource    ../../../GlobalVariables.robot
 
 *** Variables ***
 ${phoneNumber}=     css:[data-tau] > li:nth-of-type(3)

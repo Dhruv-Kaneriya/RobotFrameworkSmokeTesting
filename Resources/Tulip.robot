@@ -1,14 +1,14 @@
 *** Settings ***
-Resource    PO/LandingPage.robot
-Resource    PO/GlobalHeader.robot
-Resource    PO/GlobalFooter.robot
-Resource    PO/EmailSubscription.robot
-Resource    PO/AccountSignIn.robot
-Resource    PO/AccountSignUp.robot
-Resource    PO/EditExistingAccountProfileDetails.robot
-Resource    PO/AccountDetails.robot
-Resource    PO/ExistingAccountPasswordChange.robot
-Resource    PO/ExistingAccountAddressChange.robot
+Resource    PO/Homepage/LandingPage.robot
+Resource    PO/Homepage/GlobalHeader.robot
+Resource    PO/Homepage/GlobalFooter.robot
+Resource    PO/Homepage/EmailSubscription.robot
+Resource    PO/Account/ExistingAccount/AccountSignIn.robot
+Resource    PO/Account/NewAccount/AccountSignUp.robot
+Resource    PO/Account/ExistingAccount/EditExistingAccountProfileDetails.robot
+Resource    PO/Account/AccountDetails.robot
+Resource    PO/Account/ExistingAccount/ExistingAccountPasswordChange.robot
+Resource    PO/Account/ExistingAccount/ExistingAccountAddressChange.robot
 Resource    Common.robot
 
 *** Keywords ***
