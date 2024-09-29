@@ -85,7 +85,3 @@ Change Address Details
     ${newConcatenatedAddress}=    catenate     SEPARATOR=,     ${secondCardLine}, ${thirdCardLine}
     should be equal as strings    ${formatted_address}  ${newConcatenatedAddress}
     log    Address Successfully changed back to: ${newConcatenatedAddress}
-
-
-
-

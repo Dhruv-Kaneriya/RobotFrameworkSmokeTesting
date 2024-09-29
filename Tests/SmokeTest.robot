@@ -32,7 +32,7 @@ Account SignUp
     Tulip.Open Homepage
     Tulip.Verify SignUp Functionality
 
-Existing Account Edit Functionality
+Existing Account Edit Account Details
     Tulip.Open Homepage
     Tulip.Verify Login Functionality
     Tulip.Verify Edit Exisiting Account Details
@@ -46,3 +46,13 @@ Existing Account Address Change Functionality
     Tulip.Open Homepage
     Tulip.Verify Login Functionality
     Tulip.Verify Exisiting Account Address Change
+
+New Account Edit Account Details
+    Tulip.Open Homepage
+    Tulip.Verify SignUp Functionality
+    Tulip.Verify Edit New Account Details
+
+New Account Password Change Functionality
+    Tulip.Open Homepage
+    Tulip.Verify SignUp Functionality
+    Tulip.Verify New Account Password Change

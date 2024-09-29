@@ -10,6 +10,7 @@ ${emailInputText}=  ${existingEmailAddress}
 ${passwordInputText}=   ${existingEmailPassword}
 ${expectedUrl}=     https://development.tulipcremation.com/dashboard/
 ${loginUrl}=    xpath://a[@title='Sign In']
+
 *** Keywords ***
 Verify Account Login
     click element   ${loginUrl}
@@ -21,7 +22,3 @@ Verify Account Login
     wait until page contains    Welcome back,
     ${current_url}=     Get Location
     should be equal as strings      ${current_url}      ${expectedUrl}
-
-
-
-

@@ -6,9 +6,9 @@ Resource    ../../../GlobalVariables.robot
 Resource    ../AccountPagesGlobalVariables.robot
 
 *** Variables ***
-${passwordExistingAccountInputText}=       ${existingEmailPassword}
-${newExistingAccountPhoneNumber}=  9804285848
-${oldExistingAccountPhoneNumber}=   6385852131
+${passwordNewAccountInputText}=       ${newEmailPassword}
+${newNewAccountPhoneNumber}=  7890123456
+${oldNewAccountPhoneNumber}=  ${phoneNumberInputText}
 
 *** Keywords ***
 Edit Profile Details
@@ -16,8 +16,8 @@ Edit Profile Details
     click element       ${editDetailsLink}
     wait until element is visible    ${personalDetailsBreadcrumb}
     clear element text    ${editPhoneNumber}
-    input text     ${editPhoneNumber}   ${newExistingAccountPhoneNumber}   clear=True
-    input text    ${passwordInputLocator}      ${passwordExistingAccountInputText}
+    input text     ${editPhoneNumber}   ${newNewAccountPhoneNumber}   clear=True
+    input text    ${passwordInputLocator}      ${passwordNewAccountInputText}
     scroll element into view    ${savedetails}
     click element    ${saveDetails}
     sleep    10s
@@ -25,19 +25,19 @@ Edit Profile Details
     Should Be Equal As Strings    ${currentUrl}    ${redirectExpectedUrl}
     ${updatedPhoneNumber}=    Get Text    ${phoneNumber}
     ${normalizedUpdatedNumber}=     Normalize Phone Number    ${updatedPhoneNumber}
-    should be equal as strings    ${normalizedUpdatedNumber}     ${newExistingAccountPhoneNumber}
+    should be equal as strings    ${normalizedUpdatedNumber}     ${newNewAccountPhoneNumber}
     Log    Phone number updated successfully to ${normalizedUpdatedNumber}.
     scroll element into view    ${editDetailsLink}
     click element       ${editDetailsLink}
     wait until element is visible    ${personalDetailsBreadcrumb}
-    input text     ${editPhoneNumber}   ${oldExistingAccountPhoneNumber}   clear=True
-    input text    ${passwordInputLocator}      ${passwordExistingAccountInputText}
+    input text     ${editPhoneNumber}   ${oldNewAccountPhoneNumber}   clear=True
+    input text    ${passwordInputLocator}      ${passwordNewAccountInputText}
     scroll element into view    ${savedetails}
     click element    ${saveDetails}
     sleep    10s
     ${currentUrl}=    Get Location
     Should Be Equal As Strings    ${currentUrl}    ${redirectExpectedUrl}
-    Log    Phone number reverted back to old successfully: ${oldExistingAccountPhoneNumber}.
+    Log    Phone number reverted back to old successfully: ${oldNewAccountPhoneNumber}.
 
 
 Normalize Phone Number

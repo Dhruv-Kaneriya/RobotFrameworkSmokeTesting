@@ -19,7 +19,6 @@ ${expectedUrl}=     https://development.tulipcremation.com/dashboard/
 
 #Static Test Data
 ${firstNameInputText}=      Dhruv
-${phoneNumberInputText}=    9863959394
 ${passwordInputText}=       Asd123!@#
 
 *** Keywords ***

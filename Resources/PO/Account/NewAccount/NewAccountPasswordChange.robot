@@ -4,21 +4,20 @@ Resource    ../../../GlobalVariables.robot
 Resource    ../AccountPagesGlobalVariables.robot
 
 *** Variables ***
-${currentExistingAccountPasswordInputText}=     ${existingEmailPassword}
-${changepasswordRedirectToAccountExpectedUrl}=     https://development.tulipcremation.com/account/?redirectedFrom=changePassword
-${newExistingAccountPasswordInputText}=    Asd123!@#
+${currentNewAccountPasswordInputText}=     ${newEmailPassword}
+${newNewAccountPasswordPasswordInputText}=    Asd123!@#
 
 *** Keywords ***
 Change Account Password from Profile
     scroll element into view    ${changePasswordLink}
     click element       ${changePasswordLink}
     wait until element is visible    ${changePasswordBreadcrumb}
-    input text    ${currentPasswordInput}   ${currentExistingAccountPasswordInputText}
+    input text    ${currentPasswordInput}   ${currentNewAccountPasswordInputText}
     scroll element into view     ${newPasswordInput}
-    input text    ${newPasswordInput}   ${newExistingAccountPasswordInputText}
+    input text    ${newPasswordInput}   ${newNewAccountPasswordPasswordInputText}
     scroll element into view     ${newConfirmPasswordInput}
-    input text    ${newConfirmPasswordInput}    ${newExistingAccountPasswordInputText}
-    Log     Password Changed successfully to ${newExistingAccountPasswordInputText}
+    input text    ${newConfirmPasswordInput}    ${newNewAccountPasswordPasswordInputText}
+    Log     Password Changed successfully to ${newNewAccountPasswordPasswordInputText}
     scroll element into view    ${savedetails}
     click element    ${saveDetails}
     sleep    5s
@@ -29,11 +28,11 @@ Change Account Password from Profile
     scroll element into view    ${changePasswordLink}
     click element       ${changePasswordLink}
     wait until element is visible    ${changePasswordBreadcrumb}
-    input text    ${currentPasswordInput}   ${newExistingAccountPasswordInputText}
+    input text    ${currentPasswordInput}   ${newNewAccountPasswordPasswordInputText}
     scroll element into view     ${newPasswordInput}
-    input text    ${newPasswordInput}   ${currentExistingAccountPasswordInputText}
+    input text    ${newPasswordInput}   ${currentNewAccountPasswordInputText}
     scroll element into view     ${newConfirmPasswordInput}
-    input text    ${newConfirmPasswordInput}    ${currentExistingAccountPasswordInputText}
+    input text    ${newConfirmPasswordInput}    ${currentNewAccountPasswordInputText}
     scroll element into view    ${savedetails}
     click element    ${saveDetails}
     sleep    5s
@@ -41,4 +40,4 @@ Change Account Password from Profile
     Should Be Equal As Strings    ${currentUrl}    ${changepasswordRedirectToAccountExpectedUrl}
     wait until element is visible    ${successmessage}  timeout=10s
     element text should be    ${successmessage}     Your password has been successfully changed
-    Log     Password Changed Back to Old: ${currentExistingAccountPasswordInputText}
+    Log     Password Changed Back to Old: ${currentNewAccountPasswordInputText}
