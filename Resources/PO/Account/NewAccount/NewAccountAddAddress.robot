@@ -34,7 +34,7 @@ Add Address Details
     click element    ${saveaddressbutton}
     sleep    10s
     ${currentRedirectedUrl}=    Get Location
-    Should Be Equal As Strings    ${currentRedirectedUrl}    ${redirectExpectedUrl}
+    Should Be Equal As Strings    ${currentRedirectedUrl}    ${addresschangeRedirectToAccountExpectedUrl}
     scroll element into view    ${oldAddressCard}
     ${secondCardLine}=    Get Text    ${secondAddressCardLine}
     ${thirdCardLine}=    Get Text    ${thirdAddressCardLine}

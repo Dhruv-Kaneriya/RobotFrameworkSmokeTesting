@@ -12,6 +12,7 @@ Resource    PO/Account/ExistingAccount/ExistingAccountAddressChange.robot
 Resource    PO/Account/NewAccount/EditNewAccountProfileDetails.robot
 Resource    PO/Account/NewAccount/NewAccountPasswordChange.robot
 Resource    PO/Account/NewAccount/NewAccountAddAddress.robot
+Resource    PO/Account/PaymentMethods.robot
 Resource    Common.robot
 
 *** Keywords ***
@@ -57,3 +58,7 @@ Verify New Account Password Change
 Verify New Account Add Address
     AccountDetails.Open Account Details Page
     NewAccountAddAddress.Add Address Details
+
+Verify Payment Method Functionality
+    AccountDetails.Open Account Details Page
+    PaymentMethods.Add New Payment Method

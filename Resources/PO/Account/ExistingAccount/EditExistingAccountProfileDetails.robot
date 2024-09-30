@@ -22,7 +22,7 @@ Edit Profile Details
     click element    ${saveDetails}
     sleep    10s
     ${currentUrl}=    Get Location
-    Should Be Equal As Strings    ${currentUrl}    ${redirectExpectedUrl}
+    Should Be Equal As Strings    ${currentUrl}    ${redirectFromEditAccountDetailsExpectedUrl}
     ${updatedPhoneNumber}=    Get Text    ${phoneNumber}
     ${normalizedUpdatedNumber}=     Normalize Phone Number    ${updatedPhoneNumber}
     should be equal as strings    ${normalizedUpdatedNumber}     ${newExistingAccountPhoneNumber}
@@ -36,7 +36,7 @@ Edit Profile Details
     click element    ${saveDetails}
     sleep    10s
     ${currentUrl}=    Get Location
-    Should Be Equal As Strings    ${currentUrl}    ${redirectExpectedUrl}
+    Should Be Equal As Strings    ${currentUrl}    ${redirectFromEditAccountDetailsExpectedUrl}
     Log    Phone number reverted back to old successfully: ${oldExistingAccountPhoneNumber}.
 
 
