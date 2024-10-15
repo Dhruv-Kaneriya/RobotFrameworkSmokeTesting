@@ -60,5 +60,6 @@ Verify New Account Add Address
     NewAccountAddAddress.Add Address Details
 
 Verify Payment Method Functionality
+    [Arguments]    ${account}
     AccountDetails.Open Account Details Page
-    PaymentMethods.Add New Payment Method
+    PaymentMethods.Add New Payment Method   ${account}

@@ -17,6 +17,7 @@ ${deleteCardButton}=    xpath://button[contains(text(),'Yes, delete')]
 
 *** Keywords ***
 Add New Payment Method
+    [Arguments]     ${account}
     scroll element into view        ${addPaymentMethodLink}
     click element   ${addPaymentMethodLink}
     wait until element is visible    ${addPaymentMethodBreadcrumb}
@@ -53,19 +54,21 @@ Add New Payment Method
     ${formattedcardEndingPaymentMethods}=    Catenate    SEPARATOR=    ${month}    ${year}
     should be equal as strings      ${formattedcardEndingPaymentMethods}    ${cardExpiryDate}
     log    Payment Method Added Successfully: ${cardName} and ${cardNumber}
-    click element    ${deleteCardLink}
-    wait until element is visible    ${deleteCardDialog}
-    click element    ${deleteCardButton}
-    sleep   5s
-    ${getcardNumberPaymentMethods}=     get text    ${cardNumberPaymentMethods}
-    ${lastFour}=    Get Substring    ${getcardNumberPaymentMethods}    -4    -1
-    ${actualLastFour}=  Get Substring    ${cardNumber}    -4    -1
-    should not be equal as strings      ${lastFour}    ${actualLastFour}
-    ${getcardHolderPaymentMethods}=     get text    ${cardHolderPaymentMethods}
-    should not be equal as strings      ${getcardHolderPaymentMethods}    ${cardName}
-    ${getcardEndingPaymentMethods}=     get text    ${cardEndingPaymentMethods}
-    ${month}=    Get Substring    ${getcardEndingPaymentMethods}    0    3
-    ${year}=     Get Substring    ${getcardEndingPaymentMethods}    5    7
-    ${formattedcardEndingPaymentMethods}=    Catenate    SEPARATOR=    ${month}    ${year}
-    should not be equal as strings      ${formattedcardEndingPaymentMethods}    ${cardExpiryDate}
-    log    Payment Method Deleted Successfully: ${cardName} and ${cardNumber}
+    IF    "${account}" == "old"
+        click element    ${deleteCardLink}
+        wait until element is visible    ${deleteCardDialog}
+        click element    ${deleteCardButton}
+        sleep   5s
+        ${getcardNumberPaymentMethods}=     get text    ${cardNumberPaymentMethods}
+        ${lastFour}=    Get Substring    ${getcardNumberPaymentMethods}    -4    -1
+        ${actualLastFour}=  Get Substring    ${cardNumber}    -4    -1
+        should not be equal as strings      ${lastFour}    ${actualLastFour}
+        ${getcardHolderPaymentMethods}=     get text    ${cardHolderPaymentMethods}
+        should not be equal as strings      ${getcardHolderPaymentMethods}    ${cardName}
+        ${getcardEndingPaymentMethods}=     get text    ${cardEndingPaymentMethods}
+        ${month}=    Get Substring    ${getcardEndingPaymentMethods}    0    3
+        ${year}=     Get Substring    ${getcardEndingPaymentMethods}    5    7
+        ${formattedcardEndingPaymentMethods}=    Catenate    SEPARATOR=    ${month}    ${year}
+        should not be equal as strings      ${formattedcardEndingPaymentMethods}    ${cardExpiryDate}
+        log    Payment Method Deleted Successfully: ${cardName} and ${cardNumber}
+    END

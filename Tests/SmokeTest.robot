@@ -61,8 +61,13 @@ New Account Add Address Functionality
     Tulip.Open Homepage
     Tulip.Verify SignUp Functionality
     Tulip.Verify New Account Add Address
-
+#
 Existing Account Payment Method
     Tulip.Open Homepage
     Tulip.Verify Login Functionality
-    Tulip.Verify Payment Method Functionality
+    Tulip.Verify Payment Method Functionality   old
+
+New Account Payment Method
+    Tulip.Open Homepage
+    Tulip.Verify SignUp Functionality
+    Tulip.Verify Payment Method Functionality   new
